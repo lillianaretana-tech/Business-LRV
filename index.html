@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071426">
+    <meta name="description" content="Business Vision AI: radar personal de oportunidades de negocio viables.">
+    <title>Business Vision AI | Radar de oportunidades</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Business Vision AI inicio">
+        <span class="brand-mark">BV</span>
+        <span><strong>Business Vision</strong><small>AI</small></span>
+      </a>
+      <nav class="nav" aria-label="Navegacion principal">
+        <button class="nav-link active" data-view="radar">Radar</button>
+        <button class="nav-link" data-view="roadmap">Mi plan</button>
+        <button class="nav-link" data-view="simulator">Simulador</button>
+        <button class="nav-link" data-view="mentor">Mentor IA</button>
+        <button class="nav-link" data-view="feedback">Opina</button>
+      </nav>
+      <button id="themeToggle" class="icon-button" aria-label="Cambiar tema">Modo oscuro</button>
+    </header>
+
+    <main>
+      <section class="hero" id="radarView">
+        <div class="hero-copy">
+          <p class="eyebrow">RADAR PERSONAL DE NEGOCIOS</p>
+          <h1>Convierte tus recursos en un negocio posible.</h1>
+          <p class="hero-text">No prometemos dinero facil. Comparamos inversion, demanda, habilidades y velocidad para indicarte que validar primero en tu ciudad.</p>
+          <div class="hero-actions">
+            <button class="primary" id="startButton">Descubrir mis oportunidades</button>
+            <button class="secondary" id="demoButton">Ver ejemplo guiado</button>
+          </div>
+          <div class="trust-row" aria-label="Principios del servicio">
+            <span>Estimaciones prudentes</span>
+            <span>Datos locales por validar</span>
+            <span>IA con supervision humana</span>
+          </div>
+        </div>
+        <aside class="radar-preview" aria-label="Ejemplo de ranking">
+          <div class="radar-head">
+            <span>Radar de oportunidades</span>
+            <b>Actualizado 2026</b>
+          </div>
+          <div class="pulse"></div>
+          <article class="preview-card featured">
+            <span class="rank">01</span>
+            <div><strong>Comidas congeladas listas</strong><small>Demanda local + venta por WhatsApp</small></div>
+            <b class="score">87</b>
+          </article>
+          <article class="preview-card">
+            <span class="rank">02</span>
+            <div><strong>Asistencia para mayores</strong><small>Servicio humano recurrente</small></div>
+            <b class="score">82</b>
+          </article>
+          <article class="preview-card">
+            <span class="rank">03</span>
+            <div><strong>Microagencia con IA</strong><small>Automatizacion para comercios</small></div>
+            <b class="score">78</b>
+          </article>
+        </aside>
+      </section>
+
+      <section class="panel hidden" id="onboardingPanel" aria-label="Perfil de emprendimiento">
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow">PASO 1 DE 3</p>
+            <h2>Entendamos tu realidad</h2>
+            <p>Los datos quedan guardados solo en este dispositivo en esta demostracion.</p>
+          </div>
+          <button class="close" id="closeOnboarding" aria-label="Cerrar">x</button>
+        </div>
+        <form id="profileForm" class="profile-form">
+          <label>Edad
+            <input required type="number" name="age" min="16" max="90" value="35">
+          </label>
+          <label>Pais o ciudad
+            <input required name="country" value="Costa Rica" placeholder="Ej. Costa Rica">
+          </label>
+          <label>Presupuesto inicial (USD)
+            <input required type="number" name="budget" min="0" value="120">
+          </label>
+          <label>Meta mensual (USD)
+            <input required type="number" name="goal" min="0" value="400">
+          </label>
+          <label>Horas disponibles por semana
+            <input required type="number" name="hours" min="1" max="80" value="15">
+          </label>
+          <label>Situacion actual
+            <select name="situation">
+              <option value="extra">Trabajo y busco ingreso extra</option>
+              <option value="unemployed">Sin empleo actualmente</option>
+              <option value="student">Estudio</option>
+              <option value="business">Ya emprendo</option>
+              <option value="retired">Quiero reinventarme</option>
+            </select>
+          </label>
+          <label>Estudios
+            <select name="education">
+              <option value="basic">Basicos o aprendizaje practico</option>
+              <option value="technical">Tecnico</option>
+              <option value="university">Universitario</option>
+              <option value="self">Autodidacta / prefiero no decir</option>
+            </select>
+          </label>
+          <label>Experiencia laboral o personal
+            <input name="experience" placeholder="Ej. cocina para familia, ventas, ninguno">
+          </label>
+          <label>Objetivo
+            <select name="incomeMode">
+              <option value="extra">Ingreso extra</option>
+              <option value="full">Negocio principal</option>
+              <option value="explore">Aun lo estoy explorando</option>
+            </select>
+          </label>
+          <label>Tipo de negocio
+            <select name="format">
+              <option value="both">Fisico y digital</option>
+              <option value="home">Desde casa / local</option>
+              <option value="digital">Digital</option>
+            </select>
+          </label>
+          <label>Tolerancia al riesgo
+            <select name="risk">
+              <option value="low">Baja: proteger mi inversion</option>
+              <option value="medium">Media: probar y ajustar</option>
+              <option value="high">Alta: puedo experimentar</option>
+            </select>
+          </label>
+          <label>Me siento comodo vendiendo
+            <select name="sales">
+              <option value="some">Un poco, con guia</option>
+              <option value="yes">Si</option>
+              <option value="no">Prefiero no vender directamente</option>
+            </select>
+          </label>
+          <label>Trabajo preferido
+            <select name="team">
+              <option value="alone">Solo/a</option>
+              <option value="either">Cualquiera</option>
+              <option value="team">Con otras personas</option>
+            </select>
+          </label>
+          <label>Personalidad al emprender
+            <select name="personality">
+              <option value="guided">Necesito guia paso a paso</option>
+              <option value="social">Me gusta conversar y ayudar</option>
+              <option value="maker">Me gusta crear con mis manos</option>
+              <option value="strategic">Me gusta planear y optimizar</option>
+            </select>
+          </label>
+          <label>Intereses personales
+            <input name="interests" placeholder="Ej. comida saludable, ninos, tecnologia">
+          </label>
+          <fieldset>
+            <legend>Habilidades e intereses</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="skills" value="cooking" checked> Cocina</label>
+              <label><input type="checkbox" name="skills" value="care"> Cuidado</label>
+              <label><input type="checkbox" name="skills" value="cleaning"> Limpieza</label>
+              <label><input type="checkbox" name="skills" value="teaching"> Ensenar</label>
+              <label><input type="checkbox" name="skills" value="digital"> Redes / computadora</label>
+              <label><input type="checkbox" name="skills" value="hands"> Manualidades</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Herramientas disponibles</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="devices" value="phone" checked> Celular</label>
+              <label><input type="checkbox" name="devices" value="internet" checked> Internet</label>
+              <label><input type="checkbox" name="devices" value="computer"> Computadora</label>
+              <label><input type="checkbox" name="devices" value="transport"> Transporte</label>
+            </div>
+          </fieldset>
+          <button type="submit" class="primary full">Analizar mi perfil</button>
+        </form>
+      </section>
+
+      <section class="workspace hidden" id="workspace">
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow">TU PANEL PERSONAL</p>
+            <h2 id="welcomeTitle">Tus oportunidades</h2>
+            <p id="profileInsight"></p>
+          </div>
+          <div class="metric-row" id="metrics"></div>
+        </div>
+        <div id="trendFeed" class="trend-feed"></div>
+        <div class="view active" id="radarContent">
+          <div class="workspace-grid">
+            <section>
+              <div class="section-head">
+                <h3>Ranking viable para ti</h3>
+                <button class="text-action" id="compareButton">Comparar seleccionadas</button>
+              </div>
+              <div id="opportunityList" class="opportunity-list"></div>
+            </section>
+            <section class="detail-panel" id="detailPanel"></section>
+          </div>
+        </div>
+        <div class="view hidden" id="roadmapContent"></div>
+        <div class="view hidden" id="simulatorContent"></div>
+        <div class="view hidden" id="mentorContent"></div>
+        <div class="view hidden" id="feedbackContent"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Business Vision AI MVP. Las cifras son escenarios para validar, no promesas de ingresos ni asesoria financiera.</p>
+    </footer>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
